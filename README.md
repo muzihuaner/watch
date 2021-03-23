@@ -2,7 +2,11 @@
 
 #### 最近很火的华为太空人表盘
 
-很喜欢网上一起分享源代码的新鲜玩意儿大家喜欢就拿走吧！
+大家喜欢就拿走吧！
+
+微信公众号：
+
+<img src="https://gitee.com/muzihuaner/huangeimages/raw/master/img/qrcode.jpg" style="zoom: 15%;" />
 
 效果图：
 
