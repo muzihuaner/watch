@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>太空人表盘</title>
+    <meta charset="UTF-8">
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <script src="./assets/js/timeGeneration.js"></script>
+</head>
+<body>
+<div class="jun-meter">
+    <div class="jun-time-h-h" id="hh"></div>
+    <div class="jun-time-h-l" id="hl"></div>
+    <div class="jun-time-rect"></div>
+    <div class="jun-human"></div>
+    <div class="jun-time-m-h" id="mh"></div>
+    <div class="jun-time-m-l" id="ml"></div>
+    <div class="jun-time-s-h" id="sh"></div>
+    <div class="jun-time-s-l" id="sl"></div>
+    <div class="jun-date" id="date"></div>
+    <div class="jun-calendar-date" id="calendarDate"></div>
+</div>
+</body>
+
+<script>
+
+    function WatchMeter() {
+        // 初始化dom
+        this._initDom()
+        // 更新
+        this.update()
+
+        this.date = new TimeGeneration()
+
+    }
+
+    // 修改原型
+    WatchMeter.prototype = {
+        constructor: WatchMeter,
+        // 初始化Dom
+        _initDom: function () {
+            this.elem = {}
+            this.elem.hh = document.getElementById('hh')
+            this.elem.hl = document.getElementById('hl')
+            this.elem.mh = document.getElementById('mh')
+            this.elem.ml = document.getElementById('ml')
+            this.elem.sh = document.getElementById('sh')
+            this.elem.sl = document.getElementById('sl')
+            this.elem.date = document.getElementById('date')
+            this.elem.calendarDate = document.getElementById('calendarDate')
+        },
+
+        // 更新
+        update: function () {
+            var _this = this
+            setInterval(function () {
+                _this._render(_this.date.getDate(), _this.date.getCalendarDate(), _this.date.getTime())
+            }, 1000)
+        },
+
+        // 渲染
+        _render: function (date, calendarDate, time) {
+            this._setNumberImage(this.elem.hh, time[0])
+            this._setNumberImage(this.elem.hl, time[1])
+            this._setNumberImage(this.elem.mh, time[2])
+            this._setNumberImage(this.elem.ml, time[3])
+            this._setNumberImage(this.elem.sh, time[4])
+            this._setNumberImage(this.elem.sl, time[5])
+            this.elem.date.innerText = date[2] + " " +date[0] + "-" +date[1]
+            this.elem.calendarDate.innerText = calendarDate
+        },
+
+        // 设置数字图片
+        _setNumberImage: function (elem, value) {
+            elem.style.backgroundImage = "url(./assets/img/" + value + ".svg)";
+        }
+    }
+
+    var myWatchMeter = new WatchMeter()
+
+
+</script>
+
+</html>
