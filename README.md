@@ -4,10 +4,11 @@
 
 大家喜欢就拿走吧！
 
-微信公众号：
-
-<img src="https://gitee.com/muzihuaner/huangeimages/raw/master/img/qrcode.jpg" style="zoom: 15%;" />
 
 效果图：
 
 ![image-20210323180820563](https://cdn.jsdelivr.net/gh/muzihuaner/huancdn/img/20210323180820.png)
+
+微信公众号：
+
+<img src="https://gitee.com/muzihuaner/huangeimages/raw/master/img/qrcode.jpg" style="zoom: 15%;" />
